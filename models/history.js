@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const historySchema = new Schema({
     regno: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'Vehicle'
     },
     entered: {
         type: Boolean,
