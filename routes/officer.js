@@ -22,7 +22,7 @@ router.get('/alert', authenticate.verifyUser, authenticate.verifyadmin, (req, re
     .populate('regno')
     .then((history) => {
         var blacklist = history.filter((history) => {
-            return history.regno.type == "Guest" && Date.now() - history._id.getTimestamp() >= 8640000;
+            return history.regno.type == "Guest" && Date.now() - history._id.getTimestamp() >= 86400000;
         })
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
